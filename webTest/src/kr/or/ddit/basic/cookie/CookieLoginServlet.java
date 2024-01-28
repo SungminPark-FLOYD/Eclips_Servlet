@@ -24,26 +24,26 @@ public class CookieLoginServlet extends HttpServlet {
 	        String userid = request.getParameter("id");
 	        String password = request.getParameter("pass");
 	
-	        // If the user checked 'Remember me', save their ID in a cookie
+	        
 	        String remember = request.getParameter("check");
 	        if (remember != null && remember.equals("on")) {
 	            Cookie cookie = new Cookie("id", userid);
-	            cookie.setMaxAge(60*60*24);  // expire in 1 day
+	            cookie.setMaxAge(60*60*24);  
 	            response.addCookie(cookie);
 	        }
 	
-	        // Validate the user's credentials
+	       
 	        if (validate(userid, password)) {
-	            // Redirect to the main page
+	           
 	            response.sendRedirect(request.getContextPath() + "/basic/cookie/cookieMain.jsp");
 	        } else {
-	            // Redirect back to the login page
+	            
 	            response.sendRedirect(request.getContextPath() + "/basic/cookie/cookieLogin.jsp");
 	        }
 	    }
 	
 	    private boolean validate(String userid, String password) {
-	        // Validate the user's credentials. This is just a placeholder.
+	        
 	        return userid.equals("test") && password.equals("1234");
 	    }
 		

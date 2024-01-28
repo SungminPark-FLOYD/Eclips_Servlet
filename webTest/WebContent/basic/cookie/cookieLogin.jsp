@@ -33,7 +33,7 @@ div {
 </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/loginServlet.do" method="post">
+<form action="<%=request.getContextPath()%>/cookieLoginServlet.do" method="get">
 <div >
 <lable>ID : </lable>
 <input type="text" id="id" name="id" placeholder="ID를 입력하세요."><br>
