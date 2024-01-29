@@ -21,6 +21,8 @@ public class CookieCountServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		Cookie cntCookie = new Cookie("cnt", "1");
+		
+//		int count = 0;
 
 		out.println("<html>");
 		out.println("<head><meta charset='utf-8'><title>Cookie Count</title></head>");
@@ -31,7 +33,7 @@ public class CookieCountServlet extends HttpServlet {
 				String name = cookie.getName();
 				
 				if("cnt".equals(name)) {
-					String value = cookie.getValue();					
+					String value = cookie.getValue();	
 					out.println("<h3>어서오세요. 당신은 " + value + " 번째 방문입니다.</h3><br><br>");
 					int cnt = Integer.parseInt(value)+1;
 					cookie.setValue(cnt + "");
@@ -40,9 +42,14 @@ public class CookieCountServlet extends HttpServlet {
 			}
 		}
 		
+		//쿠키이름은 count이고 증가된 count를 쿠키 값으로 값는 cookie객체 생성
+//		Cookie countCookie = new Cookie("count", String.valueOf(count));
+//		response.addCookie(countCookie);	//쿠키저장
+//		out.println("<h3>어서오세요. 당신은 " + count + " 번째 방문입니다.</h3><br><br>");
+		
 		out.println("<a href='"+request.getContextPath()+"/cookieCountServlet.do'>카운트 증가하기</a>");
 		out.println("<a href='"+request.getContextPath()+"/basic/cookie/cookieTest02.jsp'>시작 문서로 이동하기</a>");
-		out.println("</body></html>");			
+		out.println("</body></html>");		
 	}
 
 
