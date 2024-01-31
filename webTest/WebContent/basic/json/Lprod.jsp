@@ -31,12 +31,17 @@ $(function(){
 				dataType : 'json'
 			})
 		}); //- 문자열 처리
+		
+		$("#lprod2").on("click", function(){
+			location.href = "<%=request.getContextPath()%>/lprod/lprodList2.do";
+		}); //- 문자열 처리
 	})
 </script>
 </head>
 <body>
 <form>
-<input type="button" value="Lprod자료 가져오기" id="lprod">
+<input type="button" value="Lprod자료 가져오기(Ajax)" id="lprod">
+<input type="button" value="Lprod자료 가져오기(동기방식)" id="lprod2">
 <h1>Lprod 자료 목록</h1>
 </form>
 <div id="result">
