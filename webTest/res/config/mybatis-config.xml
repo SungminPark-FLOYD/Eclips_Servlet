@@ -20,6 +20,7 @@
            -->
         <typeAlias type="kr.or.ddir.sessionlogin.vo.MemberVo" alias="MemberVo"/>
         <typeAlias type="kr.or.ddit.lprod.LprodVo" alias="LprodVo"/>
+        <typeAlias type="kr.or.ddit.basic.upload.vo.FileInfoVo" alias="FileVo"/>
     </typeAliases>
 <!--    DB에 연결 설정하기-->
     <environments default="oracleDev">
@@ -40,5 +41,6 @@
     -->
         <mapper resource="mappers/member-mapper.xml"/>
         <mapper resource="mappers/lprod-mapper.xml"/>
+        <mapper resource="mappers/fileInfo-mapper.xml"/>
     </mappers>
 </configuration>
