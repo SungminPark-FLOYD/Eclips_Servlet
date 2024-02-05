@@ -46,17 +46,19 @@
                     //빨간색 테두리 변경
                     $(this).css('border', '5px solid red');
                     vpass = "불가";
+                    
                    
                 }else {
                     $(this).css('border', '5px solid blue');
                     vpass = "가능";
                     
                 }
+                
          })
          
          $('form').submit(function (event) {
-			if(vid == "불가" && vpass == "불가") {
-				alert("아이디와 비밀번호를 확인 해 주세요")
+			if(vpass == "불가") {
+				alert("비밀번호를 확인 해 주세요")
 				event.preventDefault();
 			}
 		})
