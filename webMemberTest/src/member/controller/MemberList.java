@@ -28,6 +28,8 @@ public class MemberList extends HttpServlet {
 		request.setAttribute("memList", memList);
 		
 		request.getRequestDispatcher("/member/memberList.jsp").forward(request, response);
+	
+//		request.getRequestDispatcher("/WEB-INF/member/memberList.jsp").forward(request, response);
 	}
 
 
